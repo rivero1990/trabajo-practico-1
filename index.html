@@ -9,11 +9,16 @@
 </head>
 <body>
     
+    <!-- Titulo -->
     <h2>Supermercados Vida Saludable</h2>
 
     <h3>Bienvenido a nuestra pagina para compras online</h3>
 
+    <!-- Contenedor de elecciones -->
+    
     <div id="contenedor-elecciones">
+
+        <!-- Selecciona cantidad de productos -->
        <div>
         <label for="">Cantidad de productos :</label>
         <select name="" id="select-1">
@@ -24,6 +29,7 @@
         </select>
        </div>
        
+       <!-- Seleccion de la cantidad permitida por cada producto -->
        <div>
         <label for="">Cantidad permitida por cada producto :</label>
         <select name="" id="select-2">
@@ -34,6 +40,7 @@
         </select>
        </div>
 
+       <!-- Seleccion de colores -->
        <div>
         <label for="">Colores :</label>
         <select name="" id="select-3">
@@ -44,23 +51,29 @@
         </select>
        </div>
 
+       <!-- Boton para confirmar la compra -->
        <button onclick="confirmaInfoCompra()">Haz click aqui</button>
 
     </div>
 
     
+    <!-- Contenedor de informacion de compra -->
     <div id="contenedor-informacion-compra">
         <ul>
-
+            <!-- La informacion de la compra se mostrara aqui -->
         </ul>
     </div>
 
     
+    <!-- Contenedor del carrito de compra -->
     <div id="contenedor-carrito-compra">
-
+        
+        <!-- Los productos seleccionados se mostraran aqui -->
+    
     </div>
-    
-    
+
+    </div>  
+      
     <script src="script.js"></script>
 </body>
 </html>

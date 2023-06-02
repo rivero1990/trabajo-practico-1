@@ -21,23 +21,27 @@ const IMAGEN_8 ="https://th.bing.com/th/id/OIP.V7erebbgETw1uU8CnLtDXwHaHa?w=153&
 const IMAGEN_9 ="https://th.bing.com/th/id/OIP.dNWaYXxxEfY957YxHm6zXQHaHa?w=185&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7";
 const IMAGEN_10 = "https://th.bing.com/th/id/OIP.b-v_FCsz2LptlfE0KiOdjwHaHa?w=175&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7";
 
-const NOMBRE_PROD_1 = "Yogurt Vegano";
-const NOMBRE_PROD_2 = "Queso de almendras";
-const NOMBRE_PROD_3 = "Kefir de agua";
-const NOMBRE_PROD_4 = "Tofu";
-const NOMBRE_PROD_5 = "Hummus";
-const NOMBRE_PROD_6 = "Pan Integral";
-const NOMBRE_PROD_7 = "Galletas de arroz";
-const NOMBRE_PROD_8 = "Jugo de Naranja";
-const NOMBRE_PROD_9 = "Crema de mani";
-const NOMBRE_PROD_10 = "Huevos Organicos";
+const NOMBRE_1 = "Yogurt Vegano";
+const NOMBRE_2 = "Queso de almendras";
+const NOMBRE_3 = "Kefir de agua";
+const NOMBRE_4 = "Tofu";
+const NOMBRE_5 = "Hummus";
+const NOMBRE_6 = "Pan Integral";
+const NOMBRE_7 = "Galletas de arroz";
+const NOMBRE_8 = "Jugo de Naranja";
+const NOMBRE_9 = "Crema de mani";
+const NOMBRE_10 = "Huevos Organicos";
+
+const nombres = [NOMBRE_1, NOMBRE_2, NOMBRE_3, NOMBRE_4, NOMBRE_5, NOMBRE_6, NOMBRE_7, NOMBRE_8, NOMBRE_9, NOMBRE_10];
+const imagenes = [IMAGEN_1, IMAGEN_2, IMAGEN_3, IMAGEN_4, IMAGEN_5, IMAGEN_6, IMAGEN_7, IMAGEN_8, IMAGEN_9, IMAGEN_10];
 
 
 function confirmaInfoCompra() {
 
     detallesCompra.innerHTML = "";
-    
-    const eleccionesCompra =  [
+        
+        /* Array de opciones seleccionadas por el usuario */
+        const eleccionesCompra =  [
         `${ELECCION_CANT_PRODUC}: ${selectCantProductos.value}`,
         `${ELECCION_CANT_PERMIT}: ${selectCantPermitida.value}`,
         `${ELECCION_COLORES}: ${selectColores.value}`
@@ -46,12 +50,47 @@ function confirmaInfoCompra() {
       for (let i = 0; i < eleccionesCompra.length; i++) {
         detallesCompra.innerHTML += `<ul>${eleccionesCompra[i]}</ul>`;
       }
+    
+      /* Agrega las funciones de css solo cuando se da click al boton */
+      detallesCompra.style.border = "3px groove rgb(1, 1, 21)";
+      detallesCompra.style.marginTop = "20px";
+      detallesCompra.style.backgroundColor = "greenyellow";
+      detallesCompra.style.textAlign = "justify";
 
-    detallesCompra.style.border = "3px groove rgb(1, 1, 21)";
-    detallesCompra.style.marginTop = "20px";
-    detallesCompra.style.backgroundColor = "greenyellow";
-    detallesCompra.style.textAlign = "justify";
+    mostrarProductos();
 }
+
+
+function mostrarProductos() {
+  
+  let cantidadProductos = parseInt(selectCantProductos.value);
+
+  compraRealizada.innerHTML = "";
+
+  for (let i = 0; i < cantidadProductos; i++) {
+    // Crea un contenedor para cada producto
+    const productosContainer = document.createElement("div");
+    productosContainer.classList.add("producto-container");
+
+    // Crea el título del producto
+    const titulo = document.createElement("h4");
+    titulo.textContent = nombres[i];
+    
+    // Crea la imagen del producto
+    const imagen = document.createElement("img");
+    imagen.src = imagenes[i];
+    imagen.alt = "";
+
+    // Agrega el título y la imagen al contenedor del producto
+    productosContainer.appendChild(titulo);
+    productosContainer.appendChild(imagen);
+
+    // Agrega el contenedor del producto al contenedor de la compra realizada
+    compraRealizada.appendChild(productosContainer);
+  }
+}
+
+
 
     
 
