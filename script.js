@@ -35,8 +35,16 @@ const NOMBRE_10 = "Huevos Organicos";
 const nombres = [NOMBRE_1, NOMBRE_2, NOMBRE_3, NOMBRE_4, NOMBRE_5, NOMBRE_6, NOMBRE_7, NOMBRE_8, NOMBRE_9, NOMBRE_10];
 const imagenes = [IMAGEN_1, IMAGEN_2, IMAGEN_3, IMAGEN_4, IMAGEN_5, IMAGEN_6, IMAGEN_7, IMAGEN_8, IMAGEN_9, IMAGEN_10];
 
+// Array con las traducciones de los colores
+const traduccionesColores = {
+  "Ninguno": "None",
+  "Azul-Rojo": "Blue-Red",
+  "Gris-Verde": "Gray-Green",
+  "Marron-Celeste": "Brown-Skyblue"
+};
 
-function confirmaInfoCompra() {
+
+function muestraCompra() {
 
     detallesCompra.innerHTML = "";
         
@@ -57,11 +65,13 @@ function confirmaInfoCompra() {
       detallesCompra.style.backgroundColor = "greenyellow";
       detallesCompra.style.textAlign = "justify";
 
-    mostrarProductos();
+    mostrarProductosCarrito();
+    cambiarColoresCarrito();
+
 }
 
 
-function mostrarProductos() {
+function mostrarProductosCarrito() {
   
   let cantidadProductos = parseInt(selectCantProductos.value);
 
@@ -69,26 +79,59 @@ function mostrarProductos() {
 
   for (let i = 0; i < cantidadProductos; i++) {
     // Crea un contenedor para cada producto
-    const productosContainer = document.createElement("div");
-    productosContainer.classList.add("producto-container");
+    const contenedorProductos = document.createElement("div");
+    contenedorProductos.classList.add("productos");
 
-    // Crea el título del producto
+    // Crea el nombre de cada uno de los productos
     const titulo = document.createElement("h4");
     titulo.textContent = nombres[i];
     
-    // Crea la imagen del producto
+    // Crea la imagen de los productos
     const imagen = document.createElement("img");
     imagen.src = imagenes[i];
     imagen.alt = "";
 
-    // Agrega el título y la imagen al contenedor del producto
-    productosContainer.appendChild(titulo);
-    productosContainer.appendChild(imagen);
+    // Agrega los nombres y las imagenes al contenedor de los productos
+    contenedorProductos.appendChild(titulo);
+    contenedorProductos.appendChild(imagen);
 
-    // Agrega el contenedor del producto al contenedor de la compra realizada
-    compraRealizada.appendChild(productosContainer);
+    // Agrega el contenedor de los productos al contenedor de la compra realizada
+    compraRealizada.appendChild(contenedorProductos);
   }
 }
+
+function cambiarColoresCarrito() {
+  
+  const opcionColores = selectColores.value;
+
+  // Obtener las traducciones de los colores
+  const coloresTraducidos = traduccionesColores[opcionColores].split("-");
+
+  /* Se seleccionan todos los contenedores de productos */
+  const productos = document.querySelectorAll(".productos");
+
+  for (let i = 0; i < productos.length; i++) {
+    const colores = coloresTraducidos[i % coloresTraducidos.length];
+    productos[i].style.backgroundColor = colores;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
