@@ -15,12 +15,12 @@ ALIMENTOS Y BEBIDAS
 
 # Experiencia en el desarrollo
 
-- QUE ES LO QUE MAS LES COMPLICO DESARROLAR :
+- QUE ES LO QUE MAS LES COMPLICO DESARROLLAR :
 
-    Lo que mas me complico desarrolar fue el maquetado y estilo de la pagina mas principalmente los contenedores de los productos tuve mucho prueba y error ya que se rompia todo el css hasta que pude lograr lo que yo buscaba . Ademas tuve dificultad en como razonar y plasmar la idea de aplicar los opciones de colores.
+    Lo que mas me complico desarrollar fue el maquetado y estilo de la pagina mas principalmente los contenedores de los productos tuve mucho prueba y error ya que se rompia todo el css hasta que pude lograr lo que yo buscaba . Ademas tuve dificultad en como razonar y plasmar la idea de aplicar los opciones de colores.
 
 
-- COMO SOLUCIONAN QUE SE PRESENTABAN A LO LARGO DEL DESARROLO :
+- COMO SOLUCIONAN QUE SE PRESENTABAN A LO LARGO DEL DESARROLLO :
 
     Viendo informacion en internet y videos , en este proyecto en particular no me sirvio la revision de repositorios anteriores ya que cuando queria aplicar a esa logica no me daba el resultado que esperaba.
 
