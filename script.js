@@ -35,12 +35,12 @@ const NOMBRE_10 = "Huevos Organicos";
 const nombres = [NOMBRE_1, NOMBRE_2, NOMBRE_3, NOMBRE_4, NOMBRE_5, NOMBRE_6, NOMBRE_7, NOMBRE_8, NOMBRE_9, NOMBRE_10];
 const imagenes = [IMAGEN_1, IMAGEN_2, IMAGEN_3, IMAGEN_4, IMAGEN_5, IMAGEN_6, IMAGEN_7, IMAGEN_8, IMAGEN_9, IMAGEN_10];
 
-// Array con las traducciones de los colores
-const traduccionesColores = {
+// Array con la conversion de los colores
+const conversionColores = {
   "Ninguno": "None",
-  "Azul-Rojo": "Blue-Red",
-  "Gris-Verde": "Gray-Green",
-  "Marron-Celeste": "Brown-Skyblue"
+  "Amarillo-Rosa": "Gold-Hotpink",
+  "Gris-Verde": "Gray-Darkolivegreen",
+  "Marron-Celeste": "Sienna-Skyblue"
 };
 
 
@@ -67,6 +67,8 @@ function muestraCompra() {
 
     mostrarProductosCarrito();
     cambiarColoresCarrito();
+    agregarMetodoPago();
+    agregarCantidadPermitida();
 
 }
 
@@ -102,19 +104,72 @@ function mostrarProductosCarrito() {
 
 function cambiarColoresCarrito() {
   
-  const opcionColores = selectColores.value;
+  const opcionesColores = selectColores.value;
 
-  // Obtener las traducciones de los colores
-  const coloresTraducidos = traduccionesColores[opcionColores].split("-");
+  // Obtiene la conversion de los colores
+  const coloresRecibidos = conversionColores[opcionesColores].split("-");
 
   /* Se seleccionan todos los contenedores de productos */
   const productos = document.querySelectorAll(".productos");
 
   for (let i = 0; i < productos.length; i++) {
-    const colores = coloresTraducidos[i % coloresTraducidos.length];
+    const colores = coloresRecibidos[i % coloresRecibidos.length];
     productos[i].style.backgroundColor = colores;
   }
 }
+
+function agregarMetodoPago() {
+  const productos = document.querySelectorAll(".productos");
+
+  for (let i = 0; i < productos.length; i++) {
+    const contenedorMetodoPago = document.createElement("div");
+    contenedorMetodoPago.classList.add("metodo-pago");
+
+    const labelMetodoPago = document.createElement("label");
+    labelMetodoPago.textContent = "Seleccione metodo de pago";
+
+    const selectMetodoPago = document.createElement("select");
+    selectMetodoPago.name = "Metodo de pago";
+    selectMetodoPago.id = "met-pago";
+    selectMetodoPago.innerHTML = `
+      <option value="efec">Efectivo</option>
+      <option value="debi">Debito</option>
+      <option value="cred">Credito</option>
+    `;
+
+    contenedorMetodoPago.appendChild(labelMetodoPago);
+    contenedorMetodoPago.appendChild(selectMetodoPago);
+    productos[i].appendChild(contenedorMetodoPago);
+  }
+}
+
+function agregarCantidadPermitida() {
+  
+  const productos = document.querySelectorAll(".productos");
+
+  for (let i = 0; i < productos.length; i++) {
+    const contenedoresCantidades = document.createElement("div");
+    contenedoresCantidades.classList.add("cantidades-permitidas");
+
+    const labelCantidades = document.createElement("label");
+    labelCantidades.textContent = "Seleccione cantidad";
+
+    const selectCantidades = document.createElement("select");
+    
+    const cantRecibidas = parseInt(selectCantPermitida.value);
+    for (let i = 0; i < cantRecibidas; i++) {
+      const opcionesCantidades = document.createElement("option");
+      opcionesCantidades.value = i + 1;
+      opcionesCantidades.textContent = i + 1;
+      selectCantidades.appendChild(opcionesCantidades);
+    }
+
+    contenedoresCantidades.appendChild(labelCantidades);
+    contenedoresCantidades.appendChild(selectCantidades);
+    productos[i].appendChild(contenedoresCantidades);
+  }
+}
+
 
 
 
