@@ -44,7 +44,7 @@ const conversionColores = {
 };
 
 
-function muestraCompra() {
+function muestraInfoCompra() {
 
     detallesCompra.innerHTML = "";
         
@@ -84,17 +84,17 @@ function mostrarProductosCarrito() {
     contenedorProductos.classList.add("productos");
 
     // Crea el nombre de cada uno de los productos
-    const titulo = document.createElement("h4");
-    titulo.textContent = nombres[i];
+    const nombresProductos = document.createElement("h4");
+    nombresProductos.textContent = nombres[i];
     
     // Crea la imagen de los productos
-    const imagen = document.createElement("img");
-    imagen.src = imagenes[i];
-    imagen.alt = "";
+    const imgProductos = document.createElement("img");
+    imgProductos.src = imagenes[i];
+    imgProductos.alt = "";
 
     // Agrega los nombres y las imagenes al contenedor de los productos
-    contenedorProductos.appendChild(titulo);
-    contenedorProductos.appendChild(imagen);
+    contenedorProductos.appendChild(nombresProductos);
+    contenedorProductos.appendChild(imgProductos);
 
     // Agrega el contenedor de los productos al contenedor de la compra realizada
     compraRealizada.appendChild(contenedorProductos);
