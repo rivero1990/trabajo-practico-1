@@ -69,9 +69,8 @@ function muestraCompra() {
     cambiarColoresCarrito();
     agregarMetodoPago();
     agregarCantidadPermitida();
-
+    agregarBotonCompra();
 }
-
 
 function mostrarProductosCarrito() {
   
@@ -169,6 +168,19 @@ function agregarCantidadPermitida() {
     productos[i].appendChild(contenedoresCantidades);
   }
 }
+
+function agregarBotonCompra() {
+  const productos = document.querySelectorAll(".productos");
+
+  for (let i = 0; i < productos.length; i++) {
+    const botonCompra = document.createElement("button");
+    botonCompra.textContent = "Comprar";
+    botonCompra.classList.add("boton-compra");
+
+    productos[i].appendChild(botonCompra);
+  }
+}
+
 
 
 
