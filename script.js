@@ -11,7 +11,7 @@ const ELECCION_COLORES = "Colores seleccionados";
 
 
 const IMAGEN_1 = "https://th.bing.com/th/id/OIP.MEN6rI9xH5OaSRv585rDQgHaHa?w=202&h=202&c=7&r=0&o=5&dpr=1.3&pid=1.7";
-const IMAGEN_2 = "https://th.bing.com/th/id/OIP.2q2vcwB5EZxTNNPv7cjJJQHaHa?w=207&h=207&c=7&r=0&o=5&dpr=1.3&pid=1.7";
+const IMAGEN_2 = "https://th.bing.com/th/id/OIP.HslV9rmsVL4IKIHI0NejvQHaHa?w=165&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7";
 const IMAGEN_3 = "https://biolieve.net/wp-content/uploads/2017/06/agua-kefir-higo-limon-300x300.png";
 const IMAGEN_4 = "https://th.bing.com/th/id/OIP.7QBHzLj30tQrvkggmsu_6QHaHa?w=202&h=202&c=7&r=0&o=5&dpr=1.3&pid=1.7";
 const IMAGEN_5 = "https://th.bing.com/th/id/OIP.bljCk18c-C2d_zzalpn9cAHaHa?w=175&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7";
